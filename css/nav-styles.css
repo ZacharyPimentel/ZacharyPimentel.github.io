@@ -1,0 +1,60 @@
+.brand-container{
+	width:25%;
+	max-width: 100px;
+	display:none;
+	margin-right: 1em;
+}
+
+.col-md-8{
+	border:3px solid red;
+}
+
+.col-md-4{
+	border:3px solid blue;
+}
+
+#my-name{
+	color:lightgrey;
+	transition:0.5s;
+}
+
+.active{
+	border-bottom: 2px solid #CF6347;
+}
+
+.nav-link{
+	font-size: 1.2em;
+}
+
+.brand-container img{
+	border:2px solid #343A40;
+	border-radius: 50%;
+	transition: border 0.5s;
+}
+
+.brand-container img:hover{
+	border-radius: 50%;
+}
+
+.navbar-brand span{
+	border-bottom:2px solid #343A40;
+	transition:0.5s;
+}
+
+.navbar{
+	box-shadow: 3px 3px 3px grey;
+}
+
+/*breakpoint for tablet displays*/
+@media screen and (min-width:768px){
+	.navbar-brand{
+		border-right:2px solid grey;
+		padding-right: 1em;
+	}
+
+	.brand-container{
+		display:inline-block;
+	}
+
+
+}

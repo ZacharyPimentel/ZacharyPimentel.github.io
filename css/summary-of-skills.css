@@ -1,0 +1,46 @@
+.summary{
+	color:black;
+	background-color:#343A40;
+	margin:1em auto;
+	padding:0.5em;
+	box-shadow: 5px 5px 5px grey;
+	text-align: center;
+	border:1px solid #343A40;
+	border-radius: 5px;
+}
+
+.summary button{
+	background-color: #CF6347;
+	text-align: left;
+	
+
+}
+
+.summary button:hover{
+	
+}
+
+.card{
+	background: ivory;
+}
+
+.card p{
+	margin:0 auto;
+	margin-bottom: 16px;
+}
+
+.carat{
+	display:inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 8px 0 8px;
+	border-color: white transparent transparent transparent;
+	margin:2px;
+}
+
+@media screen and (min-width:1024px){
+	.summary{
+		width:70%;
+	}
+}
