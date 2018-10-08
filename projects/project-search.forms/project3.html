@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Code Review</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="../../css/nav-styles.css">
+	    <link rel="stylesheet" href="../../css/summary-of-skills.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			  <a class="navbar-brand" href="../../index.html">
+			  	<div class="brand-container">
+					<img id="portrait" class="img-fluid" src="../../img/portrait.jpg" alt="Picture of Zachary">
+				</div>
+				<span id="my-name">Zachary Pimentel</span>
+			  </a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../index.html">Home</a>
+			      </li>	
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../resume.html">Resume</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../contact.html">Contact</a>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>
+		</header>
+
+		<!-- this is the dropdown for the summary box under the nav -->
+		<aside class="summary">
+	      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+	    Summary of Demonstrated Skills <span class="carat"></span>
+	  	  </button>
+	  	  <div class="collapse show" id="collapseExample">
+	        <div class="card card-body">
+	          <p>Simulated the front-end for a search form</p>
+	          <p>Included input fields, radio buttons, dropdown select, textarea, and checkboxes</p>
+	          <p>Certain fields are required to submit</p>
+	          <p>Input fields have correct labelling</p>
+	          <p>input fields have the correct 'for' attribute for the info that should be entered</p>
+	          
+	        </div>
+	      </div>
+	  	</aside>
+
+		<!-- header, up to the double lines -->
+		<div class="wrapper">
+			<header>
+				<h1>THE CODE REVIEW</h1>
+				<h2>Signup for our newsletter</h2>
+				<p>Get the latest news on how your code is doing right in your inbox</p>
+			</header>
+			<!-- end of header -->
+
+			<!-- main, includes both form sections (contact info, newsletter) -->
+			<main>
+				<form action="index.html" method="post">
+					<!-- first form section, contact info -->
+					<fieldset class="contact_info">
+						<legend>Contact Information</legend>
+
+						<!-- name field -->
+						<label for="name">Full Name</label>
+						<input type="text" id="name" name="user_name" placeholder="Required" required>
+						<!-- email field -->
+						<label for="mail">Email Address</label>
+						<input type="email" id="mail" name="user_email" placeholder="Required" required>
+						<!-- phone number field -->
+						<label for="phone">Phone Number</label>
+						<input type="tel" id="phone" name="user_phone" placeholder="Not Required">
+						<!-- address field -->
+						<label for="address">Street Address</label>
+						<input type="text" id="address" name="user_address" placeholder="Not Required">
+						<!-- city field -->
+						<label for="city">City</label>
+						<input type="text" id="city" name="user_city" placeholder="Not Required">
+						<!-- state field -->
+						<label for="state">State</label>
+						<select id="state" name="user_state">
+							<option value="choose_state">Choose State</option>
+							<option value="georgia">Georgia</option>
+							<option value="utah">Utah</option>
+							<option value="washington">Washington</option>
+							<option value="arizona">Arizona</option>
+						</select>	
+						<!-- zip/postal code field -->
+						<label for="zip">Zip Code</label>
+						<input type="text" id="zip" name="user_zip" placeholder="Not Required">		
+					</fieldset>
+					<!-- end of contact info section -->
+
+					<!-- second form section, newsletter -->
+					<fieldset class="newsletter_info">
+						<legend>Newsletter</legend>
+
+						<p>Select the newsletters you would like to receive</p>
+
+						<!-- checkboxes -->
+						<input type="checkbox" id="html-newsletter" value="news_html" name="user_news">
+						<label for="html-newsletter">HTML News</label><br>
+
+						<input type="checkbox" id="css-newsletter" value="news_css" name="user_news">
+						<label for="css-newsletter">CSS News</label><br>
+
+						<input type="checkbox" id="javascript-newsletter" value="news_javascript" name="user_news">
+						<label for="javascript-newsletter">Javascript News</label>
+						<!-- end of checkboxes -->
+
+						<p>Newsletter format</p>
+
+						<!-- radio buttons -->
+						<input type="radio" id="html-format" value="format_html" name="user_format">
+						<label for="html-format">HTML</label><br>
+
+						<input type="radio" id="plaintext-format" value="format_plaintext" name="user_format">
+						<label for="plaintext-format">Plain text</label><br>
+						<!-- end of radio buttons -->
+
+						<p>Other topics you'd like to hear about</p>
+
+						<!-- feedback textarea -->
+						<textarea id="feedback" name="user_feedback" placeholder="Not Required"></textarea>
+
+					</fieldset>	
+					<!-- end of second form section -->
+
+					<!-- submit button -->
+					<button type="submit">Sign Up</button>
+
+				</form>
+			</main>
+			<!-- end of main -->
+		</div>
+		<footer>
+			<p>Copyright The Code Review</p>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="../../index.js"></script>
+	</body>
+</html>

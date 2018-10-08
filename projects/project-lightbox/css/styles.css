@@ -1,0 +1,67 @@
+/*GENERAL STYLES*/
+
+.lightboxOverlay{
+	opacity: 0.9;
+}
+
+main{
+	text-align: center;
+	
+}
+
+img{
+	max-width: 45%;
+}
+
+
+#gallery{
+	width:90%;
+	margin:auto;
+	text-align: center;
+}
+
+/*SEARCH BAR STYLES*/
+
+input{
+	height:35px;
+	width:50%;
+	border:2px solid #eaeaea;
+	border-radius: 5px;
+	padding-left:5px;
+	margin: 20px 0;
+}
+
+.search-bar{
+	text-align: center;
+}
+
+
+
+/*this breakpoint redoes some of the styles that arranges the images
+and makes them look a little better spaced out as the screen gets larger */
+@media(min-width:768px){
+	
+	a img{
+		margin:2%;
+	}
+
+	#gallery{
+		width:100%;
+	}
+
+	/*Makes the font size of the lightbox captions larger on larger screens*/
+
+	.lb-details .lb-caption{
+		font-size: 16px;
+	}
+}
+
+/*this breakpoint makes sure that only 4 images are displayed on 1 line at a time,
+even if the screen gets large enough to have enough space for more than 4 */
+@media(min-width: 1024px){
+	
+	#gallery{
+		width:1000px;
+		margin:0 auto;
+	}
+}

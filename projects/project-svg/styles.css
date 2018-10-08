@@ -1,0 +1,168 @@
+#container {
+  max-width: 960px;
+  background: #fff;
+  margin: 0 auto;
+  height: 100%; /* new line */
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  color: #111;
+  background: #edeff0;
+  background-image: url(svgs/background.svg) /*ADDED BACKGROUND IMAGE*/
+}
+
+#container p {
+  max-width: 350px;
+  margin: 35px auto 0;
+  line-height: 2em;
+  text-align: left;
+
+}
+
+#container a {
+  text-decoration: none;
+  color: #39add1;
+  font-weight: 700;
+}
+
+#container a:hover {
+  color: #111;
+}
+
+#container header {
+  padding-top: 50px;
+}
+
+#container header nav {
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+#container header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#container main {
+  padding-top: 50px;
+}
+
+#container main h2 {
+  font-size: 28px;
+}
+
+#container footer {
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  color: #ba8058;
+}
+
+/*MY ADDED CODE*/
+
+/*Keyframe for logo animation*/
+@keyframes grow{
+		0%{
+			transform: scale(1);
+		}
+		30%{
+			transform: scale(1.2);
+		}
+		60%{
+			transform: scale(0.9);
+		}
+	}
+
+/*Nav bar related*/
+#container .nav__item{
+	font-size: 1em;
+	font-weight: bold;
+	color:#39ADD1;
+	list-style:none;
+	display:inline;
+	margin:5px;
+	vertical-align: middle;
+	transition: 0.5s;
+}
+
+#container .nav__item path{
+	fill:#39ADD1;
+	transition:0.5s;
+}
+
+#container .nav__bar{
+	text-align: left;
+	margin:0;
+	padding:20px 30px;
+}
+
+#container .nav__icon{
+	height:0.8em;
+	margin-right: 5px;
+}
+
+#container .nav__item:hover{
+	color:black;
+}
+#container .nav__item:hover path{ /*transition for the nav bar*/
+	fill:black;
+}
+
+/*logo related*/
+#container .logo svg{ /*Setting the proper dimensions for the assignment */
+	width:140px;
+	height:120px;
+	margin:0 auto;
+}
+
+#container .logo .st1{
+	display:none; /*Hides the logo text in small browsers*/
+}
+
+#container .logo svg:hover .st2{
+		display: inline;
+		animation: grow 1s ease-out backwards; /*Transition for the logo*/
+}
+
+/*CSS dog colors and currentColor*/
+#container .corgi__img .body{
+	fill:currentColor; 
+}
+
+.corgi1{
+	color:#B97F5B;
+}
+
+.corgi2{
+	color:#E9AA82
+}
+
+.corgi3{
+	color:#834B29
+}
+
+.corgi4{
+	color:#52595E;
+}
+
+#container .logo .st2{
+	transform-origin: 50% 50%;
+
+
+}
+
+/*Break point*/
+@media(min-width:425px){
+	
+	#container .logo h1{
+		display:none; /*Hides h1 text in larger browser sizes*/
+	}
+
+	#container .logo .st1{
+		display:inline; /*Shows the logo text in larger browser sizes*/
+	}
+
+	
+}
