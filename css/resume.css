@@ -1,0 +1,42 @@
+.resume-title{
+	display:inline-block;
+	text-align: center;
+}
+
+main{
+	text-align: center;
+	width:100%;
+}
+
+.resume{
+	max-width:90%;
+	margin:auto;
+	background-color:white;
+	padding:20px;
+}
+
+.resume-contact span{
+	display:inline-block;
+	padding: 10px 10px;
+}
+
+.experience{
+	text-align: left;
+}
+
+.experience h4{
+	border-bottom: 1px solid grey;
+	margin:0;
+	margin-top:40px;
+	margin-bottom: 20px;
+}
+
+.experience :not(h4){
+	margin-left:20px;
+}
+
+@media(min-width: 768px){
+	.resume{
+		max-width: 60%;
+	}
+}
