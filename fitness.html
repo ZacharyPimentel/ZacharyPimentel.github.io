@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Phia's Website</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./css/index.css">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div id="nav-dropdown">
+					<div>
+						<button id="dropdown-btn">v</button>
+					</div>
+					<div id="nav-item-container">
+						<ul>
+							<li><a href="./index.html">Home</a></li>
+							<li><a href="#">Leika Bot</a></li>
+							<li><a href="#">Fitness</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div id="greeting-container">
+				<div id="greeting-msg">
+					<h2>Let's extracise!</h2>
+				</div>
+				<div id="greeting-img">
+					<img src="./img/treadmill_mobile.png" alt="bitmoji of Zac greeting hello">
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div id="timer-container">
+				<audio id="beep" src="./sounds/beep.mp3"></audio>
+				<h1>Workout Timer</h1>
+				<input id="timer" type="text">
+				<div id="current-timer"></div>
+				<button id="start-btn">Start</button>
+				<button id="reset-btn">Reset</button>
+			</div>
+			<div class="collapsed" id="current-workout">
+				<h2>CurrentMove:</h2>
+				<h2>Move List</h2>
+				<h3 id=current-move></h3>
+				<ol id="workout-list">
+				</ol>
+			</div>
+			<div id="workout-form-container">
+				<form>
+					<label for="number-of-moves">Number of Moves</label>
+					<input type="text" id="number-of-moves">
+					<label for="length-of-move">Length Of Each Move (s)</label>
+					<input type="text" id="length-of-move">
+					<label for="rest-time">Rest Time Between Moves (s)</label>
+					<input type="text" id="rest-time">
+					<input type="submit" value="Submit Workout" id="timer-submit">
+				</form>
+			</div>
+			<div id="workout-container">
+
+				<div id="warm-up-container">
+					<h1>Warm Up / Abs <input class="workout-check" id="warmup-check" name="workout-radio" type="radio"></h1>
+					<h1>Day 1 - Legs <input class="workout-check" id="day1-legs-check" name="workout-radio" type="radio"></h1>
+					<p id="time-left"></p>
+					<p id="current-action"></p>
+				</div>
+				<div id="hitt-container">
+					<h1>HITT (High Intensity Inverval Training)</h1>
+					<form>
+						<label for="hitt-input">Give me a Youtube link!</label>
+						<input id="hitt-input" type="text">
+						<input type="submit" value="Get Video" id="youtube-submit">
+					</form>
+					<div id="video-container">
+						<iframe id="video-player" hidden width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
+	</body>
+</html>
