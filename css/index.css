@@ -149,6 +149,14 @@ nav{
 	text-align: center;
 }
 
+#warm-up-container{
+	font-size: 2em;
+}
+
+#warm-up-container input{
+	min-width:50px;
+	min-height: 50px;
+}
 #workout-form-container{
 	/*text-align: center;*/
 }
@@ -220,8 +228,8 @@ nav{
 }
 
 .workout-move-check{
-	min-width:15px;
-	min-height:15px;
+	min-width:50px;
+	min-height:50px;
 }
 
 .workout-move div{
@@ -280,6 +288,8 @@ nav{
 	top:0px;
 	margin:0;
 	cursor:pointer;
+	min-width: 40px;
+	min-height: 40px;
 }	
 
 .collapsed{
@@ -299,4 +309,8 @@ nav{
 	position:absolute;
 	left:0;
 	top:0;
+}
+
+#hitt-input{
+	font-size: 3em;
 }
