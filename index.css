@@ -1,0 +1,302 @@
+*{
+	font-family: 'Permanent Marker', cursive;
+	background-color: #fec9ca;
+	box-sizing: border-box;
+}
+
+/*COLORS
+#15325c - dark blue
+#8ad6cc - dark teal
+#fec9ca - light pink
+#fa999a - medium pink
+#fb7375 - dark pink
+*/
+
+/* GREETING CONTAINER RELATED  */
+#greeting-img{
+	max-width: 500px;
+	margin:auto;
+}
+
+#greeting-img img{
+	width:100%;
+}
+
+#greeting-msg h2{
+	margin:0;
+	text-align: center;
+	position: relative;
+}
+#greeting-msg{
+	margin-bottom: -20px;
+}
+
+/****************************************/
+
+/*NAVIGATION RELATED*/
+
+nav{
+	margin-bottom: 15px;
+}
+
+#nav-dropdown button{
+	width:100%;
+	height:100px;
+	background-color: #fb7375;
+	padding: 0;
+	border:0;
+}
+
+#nav-dropdown div{
+	border:2px solid #15325c;
+}
+
+#nav-dropdown ul{
+	list-style: none;
+	padding:0;
+	margin:0;
+	display:flex;
+	flex-direction: column;
+}
+
+#nav-dropdown li{
+	text-align: center;
+	border:1px solid #15325c;
+}
+
+#nav-dropdown li a{
+	display:inline-block;
+	text-decoration: none;
+	width:100%;
+	background-color: #fa999a;
+	padding:30px;
+	font-size: 2em;
+}
+
+#nav-item-container ul{
+}
+
+#nav-dropdown li a:visited,
+#nav-dropdown li a:link{
+	color: #15325c;
+}
+
+#nav-dropdown li a:hover{
+	color: #fadada;
+}
+
+#nav-dropdown{
+	border:2px solid #15325c;
+}
+
+#timer-container{
+	margin:10px auto;
+	text-align: center;
+	border:5px solid #15325c;
+	padding:15px;
+	border-radius: 20%;
+	background-color: #fa999a;
+}
+
+#timer-container button{
+	background-color: #fb7375;
+	border:3px solid #15325c ;
+	border-radius: 40%;
+	padding:20px 40px;
+	font-size: 2em;
+}
+
+#timer-container button:hover{
+	border:3px solid white;
+	transition:0.2s;
+}
+
+#timer-container button:active{
+	border-color: #15325c;
+	transition:0s;
+}
+
+#timer-container h1{
+	margin:10px auto;
+	background-color: #fa999a;
+	width:80%;
+	font-size: 5em;
+}
+
+#timer-container input,label{
+	display:block;
+	margin:0 auto;
+}
+
+#timer-container input{
+	width:80%;
+	font-size: 4em;
+	margin-bottom:20px;
+	background-color: #8ad6cc;
+	border:5px solid #15325c ;
+	color: #15325c;
+}
+
+#timer-container input:hover{
+	border:5px solid white;
+	transition:0.2s;
+}
+#timer-container button:focus{
+	outline:none;
+}
+
+#timer{
+	text-align: center;
+}
+
+#workout-form-container{
+	/*text-align: center;*/
+}
+
+#workout-form-container form{
+	font-size: 2em;
+}
+
+#workout-form-container input{
+	font-size: 2em;
+	background-color: #fa999a;
+	padding-left: 20px;
+	border:2px solid black;
+}
+
+#timer-submit{
+	margin-top:50px;
+	padding:50px;
+	border-radius: 10px;
+	border:2px solid black;
+	background-color: #fa999a ;
+}
+
+#current-timer{
+	background-color: #fa999a;
+}
+
+#current-move{
+	font-size: 3em;
+	text-align: center;
+	margin-top:0;
+}
+
+.workout-check{
+	width:25px;
+	height:25px;
+}
+
+#current-workout{
+	margin:auto;
+}
+
+#current-workout h2{
+	text-align: center;
+	font-size: 3em;
+}
+
+#workout-list{
+	margin:auto;
+	padding:0;
+	padding-bottom: 40px;
+}
+
+#workout-list li{
+	padding:10px;
+	border:1px solid #15325c;
+	width:90%;
+	margin:auto;
+	background-color: #fa999a;
+	transition: background-color 1s;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	font-size: 4em;
+}
+
+#workout-list .workout-move:nth-child(even){
+	background-color:#8ad6cc;
+}
+
+.workout-move-check{
+	min-width:15px;
+	min-height:15px;
+}
+
+.workout-move div{
+	width:100%;
+	display:flex;
+	margin-left: 10%;
+	padding-left: 10px;
+	flex-direction: column;
+	background-color: transparent
+}
+
+.workout-move div ul,
+.workout-move div p,
+.workout-move div li{
+	background-color:transparent;
+}
+
+.workout-move{
+	font-size: 0.9em;
+}
+
+.workout-move ul{
+	padding:0;
+	display:flex;
+	flex-direction: row;
+
+}
+
+#sets-reps-div{
+	margin-left:15px;
+	border-left: 1px solid black;
+}
+
+#sets-reps-div p{
+	margin:5px;
+}
+
+.rep-counter{
+	width:100%;
+	flex:1;
+}
+
+#sets-reps-div li{
+	position:relative;
+	margin:5px;
+	background-color:  transparent;
+	border:none;
+}
+
+#sets-reps-div input{
+	display:inline-block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	margin:0;
+	cursor:pointer;
+}	
+
+.collapsed{
+	max-height:0;
+	overflow:hidden;
+	transition: max-height 1.5s cubic-bezier(.81,0,.14,1.01);
+}
+
+#video-container{
+	position:relative;
+	width: 100%;
+	border:1px solid black;
+	padding-bottom: 56.25%;
+}
+
+#video-container iframe{
+	position:absolute;
+	left:0;
+	top:0;
+}
