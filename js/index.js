@@ -127,7 +127,7 @@ function submitWorkout(workoutID){
 	}
 
 	$("#current-timer").html(`${currentWorkout.lengthOfMove}`);
-	$("#current-workout").css('max-height','1500px');
+	$("#current-workout").css('max-height','5000px');
 
 	presetWorkout = currentWorkout;
 }
@@ -394,6 +394,17 @@ let specificWorkouts = [
 		sets: 4,
 		reps: [20,25,25,16,20,20,16,30],
 		moveList: ["Half Squat Side Steps", "Jumping Jacks","Jump Squats","Glute Bridge to Toe Touch", "From Abductions","Plank Glute Kickbacks","Half Squat Reverse Stepback","Pulse Squat"],
+	},
+	{
+		title: "1 UP Week 1 Monday",
+		id: "1up-wk1-mon",
+		numberOfMoves: 12,
+		lengthOfMove: 0,
+		lengthOfRest: 0,
+		sets: 4,
+		reps: [15,15,15,15,12,12,20,20,20,20,60,60],
+		moveList: ["Biceps Curl","Triceps Kickback","Hammer Curl","Overhead Triceps Extension","Concentration Curls","Concentration Curls Partial Reps","Triceps Dips","Weighted Sit-ups","Side Bend","Russian Twist","Elbow Plank","Side Plank"],
+
 	}
 ]
 
