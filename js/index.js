@@ -36,6 +36,7 @@ function resetFunctionality(resetBtn){
 		$("#number-of-moves").val(" ");
 		$("#length-of-move").val(" ");
 		$("#rest-time").val(" ");
+		$("#current-timer").html(" ");
 
 		moveNumber = 1;
 	});
@@ -251,7 +252,7 @@ function startPauseFunctionality(startBtn){
 						if(currentWorkoutTime <= workout.lengthOfMove){
 							$("#current-move").html($($currentMoveLI).html()); 
 							$("#current-move input").remove();
-							$($currentMoveLI).css("border","2px solid yellow");
+							$($currentMoveLI).css("border","10px solid yellow");
 						}
 
 						//when a move has finished
@@ -267,7 +268,7 @@ function startPauseFunctionality(startBtn){
 							}
 
 							if(workout.lengthOfRest == 0){
-								$($currentMoveLI).next().css("border","2px solid yellow");
+								$($currentMoveLI).next().css("border","10px solid yellow");
 								$("#current-timer").html(workout.lengthOfMove + 1);
 							}
 							
@@ -275,7 +276,7 @@ function startPauseFunctionality(startBtn){
 						//when a rest has finished
 						}else if(currentWorkoutTime == (workout.lengthOfMove+workout.lengthOfRest)*(moveNumber-1)){
 							console.log("start next move");
-							$($currentMoveLI).css("border","2px solid yellow");
+							$($currentMoveLI).css("border","10px solid yellow");
 							$("#current-move").html($($currentMoveLI).html());
 
 							$("#current-timer").html(workout.lengthOfMove + 1);
