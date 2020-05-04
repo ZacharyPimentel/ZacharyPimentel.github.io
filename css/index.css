@@ -14,7 +14,7 @@
 
 /* GREETING CONTAINER RELATED  */
 #greeting-img{
-	max-width: 300px;
+	max-width: 500px;
 	margin:auto;
 }
 
@@ -41,7 +41,7 @@ nav{
 
 #nav-dropdown button{
 	width:100%;
-	height:50px;
+	height:100px;
 	background-color: #fb7375;
 	padding: 0;
 	border:0;
@@ -69,7 +69,8 @@ nav{
 	text-decoration: none;
 	width:100%;
 	background-color: #fa999a;
-	padding:10px;
+	padding:30px;
+	font-size: 2em;
 }
 
 #nav-item-container ul{
@@ -101,8 +102,8 @@ nav{
 	background-color: #fb7375;
 	border:3px solid #15325c ;
 	border-radius: 40%;
-	padding:5px 10px;
-	font-size: 1.2em;
+	padding:20px 40px;
+	font-size: 2em;
 }
 
 #timer-container button:hover{
@@ -119,6 +120,7 @@ nav{
 	margin:10px auto;
 	background-color: #fa999a;
 	width:80%;
+	font-size: 5em;
 }
 
 #timer-container input,label{
@@ -128,7 +130,7 @@ nav{
 
 #timer-container input{
 	width:80%;
-	font-size: 3em;
+	font-size: 4em;
 	margin-bottom:20px;
 	background-color: #8ad6cc;
 	border:5px solid #15325c ;
