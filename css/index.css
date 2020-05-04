@@ -149,6 +149,39 @@ nav{
 	text-align: center;
 }
 
+#workout-form-container{
+	/*text-align: center;*/
+}
+
+#workout-form-container form{
+	font-size: 2em;
+}
+
+#workout-form-container input{
+	font-size: 2em;
+	background-color: #fa999a;
+	padding-left: 20px;
+	border:2px solid black;
+}
+
+#timer-submit{
+	margin-top:50px;
+	padding:50px;
+	border-radius: 10px;
+	border:2px solid black;
+	background-color: #fa999a ;
+}
+
+#current-timer{
+	background-color: #fa999a;
+}
+
+#current-move{
+	font-size: 3em;
+	text-align: center;
+	margin-top:0;
+}
+
 .workout-check{
 	width:25px;
 	height:25px;
@@ -160,6 +193,7 @@ nav{
 
 #current-workout h2{
 	text-align: center;
+	font-size: 3em;
 }
 
 #workout-list{
@@ -178,6 +212,7 @@ nav{
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	font-size: 4em;
 }
 
 #workout-list .workout-move:nth-child(even){
