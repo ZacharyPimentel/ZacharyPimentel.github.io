@@ -232,9 +232,7 @@ nav{
 	border-left: 1px solid black;
 }
 
-#sets-reps-div p{
-	margin:5px;
-}
+
 
 .rep-counter{
 	width:100%;
@@ -362,4 +360,8 @@ nav{
 
 #timer-display-options .selected{
 	border:3px solid white;
+}
+
+.rep-counter{
+	margin-top:50px;
 }
