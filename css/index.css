@@ -102,6 +102,9 @@ nav{
 	border:5px solid #15325c;
 	padding:15px;
 	background-color: #fa999a;
+	position:sticky;
+	top:0;
+	z-index: 100;
 }
 
 #timer-container button{
@@ -181,8 +184,8 @@ nav{
 	margin:auto;
 	background-color: #fa999a;
 	transition: background-color 1s;
-	display:flex;
-	flex-wrap: wrap;
+	/*display:flex;*/
+	/*flex-wrap: wrap;*/
 	justify-content: space-between;
 }
 
@@ -191,8 +194,11 @@ nav{
 }
 
 .workout-move-check{
-	min-width:45px;
-	min-height:45px;
+	min-width:10%;
+	min-height:10%;
+	position:absolute;
+	top:0;
+	right:0;
 }
 
 .workout-move p{
@@ -218,18 +224,21 @@ nav{
 
 .workout-move{
 	font-size: 0.9em;
+	position:relative;
 }
 
 .workout-move ul{
 	padding:0;
 	display:flex;
 	flex-direction: row;
+	list-style: none;
+
 
 }
 
 #sets-reps-div{
 	margin-left:15px;
-	border-left: 1px solid black;
+	position:relative;
 }
 
 
@@ -248,7 +257,7 @@ nav{
 
 #sets-reps-div input{
 	display:inline-block;
-	position:absolute;
+	/*position:absolute;*/
 	width:100%;
 	height:100%;
 	left:0px;
@@ -363,5 +372,20 @@ nav{
 }
 
 .rep-counter{
-	margin-top:50px;
+	margin-top: :50px;
+}
+
+#total-progress-bar{
+	background-color: #8ad6cc;
+	border:3px solid black;
+	margin:5%;
+}
+
+.progress{
+	background-color:#fb7375;
+	width:0;
+}
+
+#total-progress{
+	text-align: center;
 }
