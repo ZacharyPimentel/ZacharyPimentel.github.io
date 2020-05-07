@@ -37,7 +37,8 @@ function startPauseFunctionality(startBtn){
 
 					let currentWorkoutTime = currentWorkout.totalWorkoutTime - currentWorkout.remainingWorkoutTime +1;
 
-					console.log(currentWorkoutTime);
+					$("#total-progress").css("width",`${100-(currentWorkout.remainingWorkoutTime/currentWorkout.totalWorkoutTime*100)}%`);
+					$("#total-progress").html(`${Math.floor(100-(currentWorkout.remainingWorkoutTime/currentWorkout.totalWorkoutTime*100))}%`);
 
 
 					if(currentWorkout.remainingWorkoutTime >= 1){
@@ -75,6 +76,12 @@ function startPauseFunctionality(startBtn){
 						currentWorkout.remainingWorkoutTime = currentWorkout.remainingWorkoutTime -1; //subtract 1s from the remaining workout time
 						$("#timer")[0].value = convertSecToMin(currentWorkout.remainingWorkoutTime); //workout.remainingWorkoutTime;   //set the timer input value to the new remaining workout time
 
+						//beep sound
+						let moveTime = $("#current-timer").html()
+						if(moveTime <= 4){
+							$("#beep").trigger("play");
+						}
+
 					}else{ //if remaining workout time is 0, stop the timer
 						clearInterval(interval);
 						startBtn.html("Start");
@@ -106,6 +113,7 @@ function resetFunctionality(resetBtn){
 		$("#rest-time").val(" ");
 		$("#timer").removeAttr("disabled");
 		$("#timer").css("background-color","#8ad6cc");
+		$("#total-progress-bar").remove();
 
 		moveNumber = 1;
 	});
@@ -301,6 +309,9 @@ function presetSelect(clickedButton){
 	 	$("#customize-container form input").css("background-color","lightgrey");
 	 	$("#customize-container form input[type='text']").val(" ");
 	 	$("#preset-workout-container .dropdown").click(toggleCustomizer("close"));
+
+	 	//remove progress bars
+	 	$("#total-progress-bar").remove()
 	
 	}else{//if the workout IS customizable
 
@@ -315,6 +326,20 @@ function presetSelect(clickedButton){
 	 	$("#number-of-moves").val(currentWorkout.numberOfMoves);
 	 	$("#length-of-move").val(currentWorkout.lengthOfMove);
 	 	$("#rest-time").val(currentWorkout.lengthOfRest);
+
+	 	let progressBar = "<div id='total-progress-bar' class='progess-bar'></div>";
+	 	let progress = "<div id='total-progress' class='progress'>0%</div>";
+	 	//if the progress bar doesn't exist, make it
+	 	if(!$("#total-progress-bar").length){
+	 		$("#timer-container").append(progressBar);
+	 		$("#total-progress-bar").append(progress);
+	 	}
+	 	
+	 	
+
+
+
+
 	}
 	return currentWorkout
 }
@@ -349,6 +374,7 @@ function toggleCustomizer(openOrClose){
 let currentWorkout = {};
 let interval;
 let moveNumber = 1;
+let audio = $("#beep");
 
 
 //Variables

@@ -265,5 +265,162 @@ let specificWorkouts = [
 			},		
 		},//end moves
 	},//end workout
-
+	{
+		title: "1UP - HITT Cardio",
+		id:"1up-hitt",
+		numberOfMoves: 12,
+		lengthOfMove: 60,
+		lengthOfRest: 0,
+		customizable:true,
+		moves: {
+			move1: {
+				name: "Predator Jack (Drop down in open squat)/Seal Jack",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move2:{
+				name: "High Plank Hot Hands / from Knees",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move3:{
+				name: "One leg Pogo Jumps/ Pogo Jumps",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move4:{
+				name: "Double Crab Kick / Crab Kicks",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move5:{
+				name: "High Knee + Burpee / Run in place + Mod Burpee",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move6:{
+				name: "T Rotations / From Knees",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move7:{
+				name: "Split Squat Jump / Split Switch Jump",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move8:{
+				name: "Bear Plank Walkout / Bear Plank Step Backs",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move9:{
+				name: "Speed Bag Forward & Back Run / Speed Bag + Run in place",
+				description: false,
+				sets: false,
+				reps: false,
+			},
+			move10:{
+				name: "Knee Tuck / Squat Jump",
+				description: false,
+				sets: false,
+				reps: false,
+			},	
+			move11:{
+				name: "Jump Squat",
+				description: false,
+				sets: false,
+				reps: false,
+			},		
+			move12:{
+				name: "Jumping Jacks",
+				description: false,
+				sets: false,
+				reps: false,
+			},			
+		},//end moves
+	},//end workout
+	{
+		title: "1UP - Week1 Friday",
+		id:"1up-wk1-fri",
+		numberOfMoves: 11,
+		lengthOfMove: false,
+		lengthOfRest: false,
+		customizable:false,
+		moves: {
+			move1: {
+				name: "Incline Push-Ups",
+				description: false,
+				sets: 4,
+				reps: "20",
+			},
+			move2:{
+				name: "Decline Push Ups",
+				description: false,
+				sets: 4,
+				reps: "20",
+			},
+			move3:{
+				name: "Dumbbell Push-Ups",
+				description: false,
+				sets: 4,
+				reps: "20",
+			},
+			move4:{
+				name: "Floor Press",
+				description: false,
+				sets: 4,
+				reps: "12-15",
+			},
+			move5:{
+				name: "Jumping Lunges",
+				description: false,
+				sets: 4,
+				reps: "20",
+			},
+			move6:{
+				name: "Sidestep Wide Squat",
+				description: false,
+				sets: 4,
+				reps: 20,
+			},
+			move7:{
+				name: "Weighted Sit-ups",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move8:{
+				name: "Side Bend",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move9:{
+				name: "Russian Twist",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move10:{
+				name: "Elbow Plank",
+				description: false,
+				sets: 5,
+				reps: "1 Min Hold",
+			},
+			move11:{
+				name: "Side Plank",
+				description: false,
+				sets: 5,
+				reps: "1 Min Hold",
+			},		
+		},//end moves
+	},//end workout
 ]//end specific workouts array
