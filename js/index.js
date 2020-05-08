@@ -347,7 +347,7 @@ function presetSelect(clickedButton){
 	 	$("#customize-container form input[type='text']").val(" ");
 	 	$("#preset-workout-container .dropdown").click(toggleCustomizer("close"));
 
-	 	$("#timer-container").removeClass("sticky");
+	 	// $("#timer-container").removeClass("sticky");
 	
 	}else{//if the workout IS customizable
 
@@ -383,7 +383,7 @@ function presetSelect(clickedButton){
 
 	 	
 	 	
-	 	$("#timer-container").addClass("sticky");
+	 	// $("#timer-container").addClass("sticky");
 	}
 	return currentWorkout
 }
