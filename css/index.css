@@ -16,6 +16,12 @@ input[type="checkbox"]{
 	min-height: 40px;
 }
 
+input[type='text']{
+	background-color: #8ad6cc;
+	border:5px solid #15325c ;
+	transition: background-color 0.5s;
+}
+
 /*COLORS
 #15325c - dark blue
 #8ad6cc - dark teal
@@ -26,7 +32,7 @@ input[type="checkbox"]{
 
 /* GREETING CONTAINER RELATED  */
 #greeting-img{
-	max-width: 300px;
+	max-width: 60%;
 	margin:auto;
 }
 
@@ -109,9 +115,9 @@ nav{
 }
 
 .sticky{
-	/*position:sticky;
+	position:sticky;
 	top:0;
-	z-index: 100;*/
+	z-index: 100;
 }
 
 #timer-container button{
@@ -213,11 +219,7 @@ nav{
 }
 
 .workout-move div{
-	width:100%;
-	display:flex;
-	margin-left: 10%;
-	padding-left: 10px;
-	flex-direction: column;
+
 	background-color: transparent
 }
 
@@ -240,13 +242,11 @@ nav{
 	display:flex;
 	flex-direction: row;
 	list-style: none;
-
-
+	justify-content: space-around;
 }
 
 #sets-reps-div{
-	margin-left:15px;
-	position:relative;
+
 }
 
 
@@ -261,13 +261,17 @@ nav{
 	margin:5px;
 	background-color:  transparent;
 	border:none;
+	flex-grow: 1;
+	max-width: 20%;
+	text-align: center;
 }
+
 
 #sets-reps-div input{
 	display:inline-block;
 	/*position:absolute;*/
-	width:100%;
-	height:100%;
+	width:100px;
+	height:100px;
 	left:0px;
 	top:0px;
 	margin:0;
@@ -318,14 +322,33 @@ nav{
 #customize-container{
 	overflow:hidden;
 	max-height:0px;
-	border:1px solid black;
 	transition:  0.3s;
+	margin-bottom: 5%;
 }
+
+#customize-container input[type='submit']{
+	width: 40%;
+	border:5px solid black;
+	background-color: #fb7375;
+	margin-top: 5%;
+	padding:2%;
+}
+
+#customize-container button{
+	border:5px solid black;
+	background-color: #fa999a;
+	padding:2%;
+}
+
+
 
 #preset-btn-container{
 	margin-bottom: 20px;
 }
 
+.preset-btn{
+	background-color: #fa999a;
+}
 
 .dropdown{
 	cursor:pointer;

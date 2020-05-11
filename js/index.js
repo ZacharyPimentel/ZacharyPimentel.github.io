@@ -71,6 +71,10 @@ function startPauseFunctionality(startBtn){
 							moveNumber += 1;
 							currentMoveTime = 0;
 
+							//these 2 lines will "minimize" the move that just finished and check it off
+							$($($currentMoveLI).children()[0]).hide();
+							$($($currentMoveLI).children()[1]).prop("checked",true);
+
 							$("#current-progress").css("width","0")
 
 							if(currentWorkout.lengthOfRest != 0){
@@ -102,12 +106,14 @@ function startPauseFunctionality(startBtn){
 						currentWorkout.remainingWorkoutTime = currentWorkout.remainingWorkoutTime -1; //subtract 1s from the remaining workout time
 						$("#timer")[0].value = convertSecToMin(currentWorkout.remainingWorkoutTime); //workout.remainingWorkoutTime;   //set the timer input value to the new remaining workout time
 						currentMoveTime += 1;
-
 						//beep sound
 						let moveTime = $("#current-progress").html()
 						if(moveTime <= 3){
 							$("#beep").trigger("play");
+						}else if(moveTime == currentWorkout.lengthOfMove){
+							$("#ping").trigger("play");
 						}
+						console.log(moveTime)
 
 					}else{ //if remaining workout time is 0, stop the timer
 						clearInterval(interval);
@@ -142,8 +148,13 @@ function resetFunctionality(resetBtn){
 		$("#timer").css("background-color","#8ad6cc");
 		$("#total-progress-bar").remove();
 		$("#current-progress-bar").remove();
-		$(".preset-btn").css("background-color","#fec9ca");
+		$(".preset-btn").css("background-color","#fa999a");
 		$("#current-info").remove();
+		$("#customize-container form input[type='button']").val(" ")
+		$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
+		$("#customize-container form input[type='submit']").css('background-color',"#fb7375")
+		$("#customize-container form input[type='submit']").css('color',"black")
+
 		isResting = false;
 		currentMoveTime = 1;
 
@@ -197,12 +208,12 @@ function submitFunctionality(submitButton){
 		currentWorkout.totalWorkoutTime = totalWorkoutTime;
 		currentWorkout.remainingWorkoutTime = totalWorkoutTime;
 
+		$("#current-progress").html(currentWorkout.lengthOfMove)
+
 		//makes the timer the total workout time if it's > 0 and a number
 		if($.isNumeric(totalWorkoutTime) && totalWorkoutTime >= 0){
 
 			$("#timer").val(convertSecToMin(totalWorkoutTime));
-		}else{
-			$("#timer").val("Error! Try again.");
 		}
 		
 		//clears the input boxes
@@ -235,13 +246,20 @@ function submitWorkout(currentWorkout){
 
 	$(".workout-move-check").change(function(){
 		if(this.checked){
-			$(this).parent().css("background-color","grey")
+			$(this).parent().css("background-color","grey");
+			console.log("changed")
+			$(this).siblings().hide();
 		}else{
 			$(this).parent().css({ 'background-color' : '', 'opacity' : '' });
+			$(this).siblings().show();
 		}
 	})
+	//only toggles the height if there are items in the workout list to display (essentially catches the error where the workout list is empty)
+	console.log($("#workout-list").children().length)
+	if($("#workout-list").children().length > 1){
+		$("#current-workout").css('max-height',getHeight($("#current-workout")));
+	}
 	
-	$("#current-workout").css('max-height',getHeight($("#current-workout")));
 	
 }
 
@@ -323,8 +341,8 @@ function updateWorkout(currentWorkout){
 //////////////
 function presetSelect(clickedButton){
 	//change bg color of the buttons to the default and change the selected one's bg color
-	$(".preset-btn").css("background-color","#fec9ca");
-	$(clickedButton).css("background-color","#fa999a");
+	$(".preset-btn").css("background-color","#fa999a");
+	$(clickedButton).css("background-color","#fb7375");
 
 	$(specificWorkouts).each(function(index,value){
 		if(this.id == $(clickedButton).val()){
@@ -345,23 +363,47 @@ function presetSelect(clickedButton){
 		$("#customize-container form input").attr("disabled","disabled");
 	 	$("#customize-container form input").css("background-color","lightgrey");
 	 	$("#customize-container form input[type='text']").val(" ");
-	 	$("#preset-workout-container .dropdown").click(toggleCustomizer("close"));
 
-	 	// $("#timer-container").removeClass("sticky");
-	
+	 	//scroll straight to the workout list. Pauses for .3 seconds if the customizer is open to allow it to close
+	 	//otherwise the scroll isnt accurate and brings the page to the wrong place
+	 	if(customizerOpen){
+	 		setTimeout(function(){
+	 			$([document.documentElement, document.body]).animate({
+	 			scrollTop: $("#current-workout").offset().top
+	 			},1000)
+	 		},300)
+	 	}else{
+	 		$([document.documentElement, document.body]).animate({
+ 				scrollTop: $("#current-workout").offset().top
+ 			},1000)
+	 	}
+
+	 	//closes the customizer
+	 	$("#preset-workout-container .dropdown").click(toggleCustomizer("close"));
+	 	
 	}else{//if the workout IS customizable
 
-		//open the customizer
+		//scroll to the workout timer
+		$([document.documentElement, document.body]).animate({
+	 		scrollTop: $("#timer-container").offset().top
+	 	},1000)
 
 		//enables the input fields, removes the warning text
 		$("#customize-warning").hide()
 		$("#customize-container form input").removeAttr("disabled");
-	 	$("#customize-container form input").css("background-color","#fec9ca");
+	 	$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
+	 	$("#customize-container form input[type='submit']").css("background-color","#fb7375");
 	 	
 	 	//autofills the inputs if the workout is customizable
 	 	$("#number-of-moves").val(currentWorkout.numberOfMoves);
 	 	$("#length-of-move").val(currentWorkout.lengthOfMove);
-	 	$("#rest-time").val(currentWorkout.lengthOfRest);
+	 	//makes the autofilled value for rest time to blank if its 0 for convienience typing
+	 	if(currentWorkout.lengthOfRest == 0){
+	 		$("#rest-time").val(" ");
+	 	}else{
+	 		$("#rest-time").val(currentWorkout.lengthOfRest);
+	 	}
+	 	
 
 	 	let progressBar = "<div id='total-progress-bar' class='progess-bar'></div>";
 	 	let progress = "<div id='total-progress' class='progress'>0%</div>";
@@ -378,12 +420,7 @@ function presetSelect(clickedButton){
 	 		$("#current-move").append(`<h2>${currentWorkout.moves.move1.name}</h2>`);
 	 		$("#timer-container").append("<div id='current-progress-bar' class='progess-bar'></div>");
 	 		$("#current-progress-bar").append(`<div id='current-progress'class='progress'>${currentWorkout.lengthOfMove}</div>`);
-
 	 	}
-
-	 	
-	 	
-	 	// $("#timer-container").addClass("sticky");
 	}
 	return currentWorkout
 }
@@ -409,7 +446,18 @@ function toggleCustomizer(openOrClose){
 		$("#customize-container").css("max-height", getHeight($("#customize-container")))
 		$("#customizer-caret").addClass("caret-down");
 		customizerOpen = true; //toggle to true
+
+		//scroll to the customizer
+		$([document.documentElement, document.body]).animate({
+	 		scrollTop: $(".dropdown").offset().top
+	 	},500)
+
 	}
+}
+
+function enableNoSleep(){
+	noSleep.enable()
+	document.removeEventListener("touchstart", enableNoSleep, false);
 }
 
 //RUNS ON STARTUP
@@ -418,10 +466,13 @@ function toggleCustomizer(openOrClose){
 let currentWorkout = {};
 let interval;
 let moveNumber = 1;
-let audio = document.getElementById("beep");
-audio.volume = 0.4;
+let audio1 = document.getElementById("beep");
+let audio2 = document.getElementById("ping");
+audio1.volume = 0.4;
+audio2.volume = 0.4;
 let isResting = false;
 let currentMoveTime = 1;
+let noSleep = new NoSleep();
 
 
 //Variables
@@ -480,10 +531,13 @@ $("#close-preset").click(function(){
 //functionality for preset reset button
 $("#reset-preset").click(function(){
 	$("#customize-container form input").removeAttr("disabled");
+	$("#timer").removeAttr("disabled");
+	$("#timer").css("background-color","#8ad6cc");
 	$("#customize-container form input[type='button']").val(" ")
-	$("#customize-container form input").css("background-color","#fec9ca");
+	$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
+	$("#customize-container form input[type='submit']").css('background-color',"#fb7375")
 	$("#customize-warning").hide()
-	$(".preset-btn").css("background-color","#fec9ca");
+	$(".preset-btn").css("background-color","#fa999a");
 	currentWorkout = {};
 })
 
@@ -496,3 +550,4 @@ $("#youtube-submit").click(handleYoutubeLink); //will run if youtube link submit
 
 //constantly running
 getTimerInputValue();
+
