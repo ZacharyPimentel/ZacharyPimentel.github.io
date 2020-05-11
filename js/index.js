@@ -199,6 +199,10 @@ function submitFunctionality(submitButton){
 		let numberOfMoves = parseInt($('#number-of-moves')[0].value,10);
 		let lengthOfMove = parseInt($('#length-of-move')[0].value,10);
 		let lengthOfRest = parseInt($('#rest-time')[0].value,10);
+		if(Number.isNaN(lengthOfRest)){
+			lengthOfRest = 0;
+		}
+		
 		let totalWorkoutTime = (numberOfMoves*lengthOfMove)+(numberOfMoves*lengthOfRest) - lengthOfRest;
 
 		//adds the form info to the workout object for reference
