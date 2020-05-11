@@ -423,4 +423,80 @@ let specificWorkouts = [
 			},		
 		},//end moves
 	},//end workout
+	{
+		title: "1UP - Week 2 Monday",
+		id:"1up-wk2-mon",
+		numberOfMoves: 11,
+		lengthOfMove: false,
+		lengthOfRest: false,
+		customizable:false,
+		moves: {
+			move1: {
+				name: "Seated Biceps Curl",
+				description: "Static Hold: Every 5th Rep, complete a 5 second static hold at the top of the movement",
+				sets: 4,
+				reps: "20",
+			},
+			move2:{
+				name: "Two-Arms Triceps Extension",
+				description: false,
+				sets: 4,
+				reps: "12-15",
+			},
+			move3:{
+				name: "Seated Alternated Biceps Curl",
+				description: false,
+				sets: 4,
+				reps: "12-15",
+			},
+			move4:{
+				name: "Triceps Kickback",
+				description: false,
+				sets: 4,
+				reps: "20",
+			},
+			move5:{
+				name: "Hammer Curls",
+				description: "Partial Reps: 4 sets, Complete 12 Full Reps, then immediately complete 6 '1/2' Reps at the bottom of movement",
+				sets: 4,
+				reps: "20",
+			},
+			move6:{
+				name: "Triceps Dips",
+				description: "Sit on the edge of a sturdy chair or bench",
+				sets: 4,
+				reps: 20,
+			},
+			move7:{
+				name: "Weighted Sit-ups",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move8:{
+				name: "Side Bend",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move9:{
+				name: "Russian Twist",
+				description: false,
+				sets: 4,
+				reps: "15-20",
+			},
+			move10:{
+				name: "Elbow Plank",
+				description: false,
+				sets: 5,
+				reps: "1 Min Hold",
+			},
+			move11:{
+				name: "Side Plank",
+				description: false,
+				sets: 5,
+				reps: "1 Min Hold",
+			},		
+		},//end moves
+	},//end workout
 ]//end specific workouts array
