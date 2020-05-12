@@ -1,7 +1,7 @@
 *{
 	/*font-family: 'Permanent Marker', cursive;*/
 	font-family: 'Poiret One',cursive;
-	background-color: #fec9ca;
+	background-color: #232323;
 	box-sizing: border-box;
 	font-weight:bold;
 	font-size: 1.2em;
@@ -17,17 +17,17 @@ input[type="checkbox"]{
 }
 
 input[type='text']{
-	background-color: #8ad6cc;
-	border:5px solid #15325c ;
+	background-color: #E63895;
+	border:5px solid #050505 ;
 	transition: background-color 0.5s;
 }
 
 /*COLORS
-#15325c - dark blue
-#8ad6cc - dark teal
-#fec9ca - light pink
-#fa999a - medium pink
-#fb7375 - dark pink
+#050505 - dark blue
+#E63895 - dark teal
+#232323 - light pink
+#f77FBE - medium pink
+#D31877 - dark pink
 */
 
 /* GREETING CONTAINER RELATED  */
@@ -60,13 +60,13 @@ nav{
 #nav-dropdown button{
 	width:100%;
 	height:50px;
-	background-color: #fb7375;
+	background-color: #D31877;
 	padding: 0;
 	border:0;
 }
 
 #nav-dropdown div{
-	border:2px solid #15325c;
+	border:2px solid #050505;
 }
 
 #nav-dropdown ul{
@@ -79,14 +79,14 @@ nav{
 
 #nav-dropdown li{
 	text-align: center;
-	border:1px solid #15325c;
+	border:1px solid #050505;
 }
 
 #nav-dropdown li a{
 	display:inline-block;
 	text-decoration: none;
 	width:100%;
-	background-color: #fa999a;
+	background-color: #f77FBE;
 	padding:10px;
 }
 
@@ -95,7 +95,7 @@ nav{
 
 #nav-dropdown li a:visited,
 #nav-dropdown li a:link{
-	color: #15325c;
+	color: #050505;
 }
 
 #nav-dropdown li a:hover{
@@ -103,15 +103,15 @@ nav{
 }
 
 #nav-dropdown{
-	border:2px solid #15325c;
+	border:2px solid #050505;
 }
 
 #timer-container{
 	margin:10px auto;
 	text-align: center;
-	border:5px solid #15325c;
+	border:5px solid white;
 	padding:15px;
-	background-color: #fa999a;
+	background-color: #f77FBE;
 }
 
 .sticky{
@@ -121,8 +121,8 @@ nav{
 }
 
 #timer-container button{
-	background-color: #fb7375;
-	border:3px solid #15325c ;
+	background-color: #D31877;
+	border:5px solid #050505 ;
 	border-radius: 40%;
 	padding:5% 10%;
 	font-size: 2em;
@@ -134,13 +134,13 @@ nav{
 }
 
 #timer-container button:active{
-	border-color: #15325c;
+	border-color: #050505;
 	transition:0s;
 }
 
 #timer-container h1{
 	margin:10px auto;
-	background-color: #fa999a;
+	background-color: #f77FBE;
 	width:80%;
 }
 
@@ -153,9 +153,9 @@ nav{
 	width:80%;
 	font-size: 3em;
 	margin-bottom:20px;
-	background-color: #8ad6cc;
-	border:5px solid #15325c ;
-	color: #15325c;
+	background-color: #E63895;
+	border:5px solid #050505 ;
+	color: #050505;
 }
 
 #timer-container input:hover{
@@ -182,6 +182,7 @@ nav{
 
 #current-workout h2{
 	text-align: center;
+	color:white;
 }
 
 #workout-list{
@@ -192,18 +193,22 @@ nav{
 
 #workout-list li{
 	padding:10px;
-	border:1px solid #15325c;
+	border:1px solid #050505;
 	width:90%;
 	margin:auto;
-	background-color: #fa999a;
+	background-color: #f77FBE;
 	transition: background-color 1s;
 	/*display:flex;*/
 	/*flex-wrap: wrap;*/
 	justify-content: space-between;
 }
 
+#workout-list h2{
+	color:black;
+}
+
 #workout-list .workout-move:nth-child(even){
-	background-color:#8ad6cc;
+	background-color:#E63895;
 }
 
 .workout-move-check{
@@ -215,7 +220,7 @@ nav{
 }
 
 .workout-move p{
-	flex-basis: 100%
+	flex-basis: 100%;
 }
 
 .workout-move div{
@@ -245,8 +250,12 @@ nav{
 	justify-content: space-around;
 }
 
-#sets-reps-div{
+.workout-move h2{
+	font-size: 1.5em;
+}
 
+#sets-reps-div p{
+	margin:0;
 }
 
 
@@ -316,7 +325,6 @@ nav{
 	margin:5px;
 	/*font-size: 1em;*/
 	padding:5%;
-	border:3px solid black;
 }
 
 #customize-container{
@@ -324,19 +332,20 @@ nav{
 	max-height:0px;
 	transition:  0.3s;
 	margin-bottom: 5%;
+	color:white;
 }
 
 #customize-container input[type='submit']{
 	width: 40%;
 	border:5px solid black;
-	background-color: #fb7375;
+	background-color: #D31877;
 	margin-top: 5%;
 	padding:2%;
 }
 
 #customize-container button{
 	border:5px solid black;
-	background-color: #fa999a;
+	background-color: #f77FBE;
 	padding:2%;
 }
 
@@ -347,13 +356,18 @@ nav{
 }
 
 .preset-btn{
-	background-color: #fa999a;
+	background-color: #f77FBE;
+	border:3px solid white;
 }
 
 .dropdown{
 	cursor:pointer;
+	color:white;
 }
 
+#preset-workout-container{
+	color:white;
+}
 
 .caret{
 	display:inline-block;
@@ -371,11 +385,22 @@ nav{
 
 #customize-container form{
 	text-align: center;
+	color:white;
+}
+
+#customize-container input[type='submit']{
+	color:white;
+	border:3px solid white;
+}
+
+#customize-container button{
+	border:3px solid white;
 }
 
 #customize-container input{
 	margin:10px;
 	padding-left: 2%;
+	border:3px solid white;
 }
 
 #timer-container p{
@@ -386,7 +411,7 @@ nav{
 #timer-display-options{
 	display:flex;
 	justify-content: flex-end;
-	background-color:#fa999a ;
+	background-color:#f77FBE ;
 }
 
 #timer-display-options button{
@@ -406,30 +431,32 @@ nav{
 }
 
 #total-progress-bar{
-	background-color: #8ad6cc;
+	background-color: #E63895;
 	border:3px solid black;
 	margin:5%;
 	font-size: 2em;
 }
 
 .progress{
-	background-color:#fb7375;
+	background-color:#D31877;
 	width:0;
 }
 
 #total-progress{
 	text-align: center;
+	background-color: #8ad6cc;
 }
 
 #current-progress-bar{
 	margin: 0 15% 5% 15%;
 	border:3px solid black;
-	background-color: #8ad6cc;
+	background-color: #E63895;
 	font-size: 1.5em;
 }
 
 #current-progress{
 	text-align: center;
+	background-color: #8ad6cc;
 }
 
 #current-info{
@@ -437,9 +464,17 @@ nav{
 }
 
 #current-move h2{
-	background-color:#fa999a;
+	background-color:#f77FBE;
 }
 
 #preset-btn-container div{
 	margin: 10% 0;
+}
+
+#hitt-container{
+	color:white;
+}
+
+#hitt-container input{
+	color:white;
 }

@@ -61,7 +61,7 @@ function startPauseFunctionality(startBtn){
 						if(currentWorkoutTime <= currentWorkout.lengthOfMove){
 							$("#current-move").html($($currentMoveLI).html()); 
 							$("#current-move input").remove();
-							$($currentMoveLI).css("border","10px solid yellow");
+							$($currentMoveLI).css("border","10px solid #8ad6cc");
 						}
 
 						//when a move has finished
@@ -85,7 +85,7 @@ function startPauseFunctionality(startBtn){
 							}
 
 							if(currentWorkout.lengthOfRest == 0){
-								$($currentMoveLI).next().css("border","10px solid yellow");
+								$($currentMoveLI).next().css("border","10px solid #8ad6cc");
 								console.log("no resting now!")
 								$("#current-progress").html(`${currentWorkout.lengthOfMove}`)
 								isResting = false;
@@ -95,7 +95,7 @@ function startPauseFunctionality(startBtn){
 						//when a rest has finished
 						}else if(currentWorkoutTime == (currentWorkout.lengthOfMove+currentWorkout.lengthOfRest)*(moveNumber-1)){
 							console.log("start next move");
-							$($currentMoveLI).css("border","10px solid yellow");
+							$($currentMoveLI).css("border","10px solid #8ad6cc");
 							$("#current-move").html($($currentMoveLI).html());
 							$("#current-progress").html(`${currentWorkout.lengthOfMove}`)
 							$("#current-progress").css("width","0")
@@ -145,14 +145,14 @@ function resetFunctionality(resetBtn){
 		$("#length-of-move").val(" ");
 		$("#rest-time").val(" ");
 		$("#timer").removeAttr("disabled");
-		$("#timer").css("background-color","#8ad6cc");
+		$("#timer").css("background-color","#E63895");
 		$("#total-progress-bar").remove();
 		$("#current-progress-bar").remove();
-		$(".preset-btn").css("background-color","#fa999a");
+		$(".preset-btn").css("background-color","#f77FBE");
 		$("#current-info").remove();
 		$("#customize-container form input[type='button']").val(" ")
-		$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
-		$("#customize-container form input[type='submit']").css('background-color',"#fb7375")
+		$("#customize-container form input[type='text']").css("background-color","#E63895");
+		$("#customize-container form input[type='submit']").css('background-color',"#E63895")
 		$("#customize-container form input[type='submit']").css('color',"black")
 
 		isResting = false;
@@ -345,8 +345,8 @@ function updateWorkout(currentWorkout){
 //////////////
 function presetSelect(clickedButton){
 	//change bg color of the buttons to the default and change the selected one's bg color
-	$(".preset-btn").css("background-color","#fa999a");
-	$(clickedButton).css("background-color","#fb7375");
+	$(".preset-btn").css("background-color","#f77FBE");
+	$(clickedButton).css("background-color","#E63895");
 
 	$(specificWorkouts).each(function(index,value){
 		if(this.id == $(clickedButton).val()){
@@ -395,8 +395,8 @@ function presetSelect(clickedButton){
 		//enables the input fields, removes the warning text
 		$("#customize-warning").hide()
 		$("#customize-container form input").removeAttr("disabled");
-	 	$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
-	 	$("#customize-container form input[type='submit']").css("background-color","#fb7375");
+	 	$("#customize-container form input[type='text']").css("background-color","#E63895");
+	 	$("#customize-container form input[type='submit']").css("background-color","#E63895");
 	 	
 	 	//autofills the inputs if the workout is customizable
 	 	$("#number-of-moves").val(currentWorkout.numberOfMoves);
@@ -500,7 +500,7 @@ $(".dropdown").click(function(){
 $("#preset-btn-container button").click(function(){
 	submitWorkout(presetSelect(this));
 	if(currentWorkout.customizable){
-		$("#timer").css("background-color","#8ad6cc")
+		$("#timer").css("background-color","#E63895")
 		$("#timer").removeAttr("disabled");
 		updateWorkout(currentWorkout)
 	}else{
@@ -536,12 +536,12 @@ $("#close-preset").click(function(){
 $("#reset-preset").click(function(){
 	$("#customize-container form input").removeAttr("disabled");
 	$("#timer").removeAttr("disabled");
-	$("#timer").css("background-color","#8ad6cc");
+	$("#timer").css("background-color","#E63895");
 	$("#customize-container form input[type='button']").val(" ")
-	$("#customize-container form input[type='text']").css("background-color","#8ad6cc");
-	$("#customize-container form input[type='submit']").css('background-color',"#fb7375")
+	$("#customize-container form input[type='text']").css("background-color","#E63895");
+	$("#customize-container form input[type='submit']").css('background-color',"#E63895")
 	$("#customize-warning").hide()
-	$(".preset-btn").css("background-color","#fa999a");
+	$(".preset-btn").css("background-color","#f77FBE");
 	currentWorkout = {};
 })
 
