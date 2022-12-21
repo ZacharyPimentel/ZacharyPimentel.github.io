@@ -31,3 +31,52 @@ html{
     font-family: 'Montserrat';
     font-size:1.6rem;
 }
+
+
+.custom-breakpoint-container{
+    @apply px-[1.2rem] md:px-[3.6rem] lg:px-[5.6rem];
+}
+
+.black-to-white-gradient{
+    background:linear-gradient(to right, #e6034a 50%, white 50%, white 100%);
+}
+
+#eclipse-banner{
+    background-image:url('./assets/eclipse.jpg');
+    background-position: center;
+    background-size: cover;
+    height:500px;
+    background-repeat: no-repeat;
+    animation-name:rotate;
+    animation-duration: 1s;
+    position:absolute;
+    width:100%;
+    z-index: 0;
+    transform:scale(1)
+}
+
+@keyframes rotate {
+    from {
+        transform:rotate(180deg) scale(15);
+    }
+    to {
+        transform:rotate(0) scale(1);
+    }
+}
+
+#css-wizard-arrow::before{
+    content:'';
+    width:10px;
+    background-color:white;
+    height:1px;
+    @apply absolute top-[13.5px] left-[4px]
+}
+#css-wizard-arrow::after{
+    content:'';
+    width:10px;
+    background-color:white;
+    height:1px;
+    transform:rotate(90deg);
+    @apply absolute top-[18px] left-[9px]
+}
+
